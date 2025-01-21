@@ -1,0 +1,11 @@
+color_theme: Dark
+arch: true
+cpu: true
+gpu: true
+kernel: true
+uptime: true
+os: true
+distro: true
+
+favoris:
+  - bouajila
