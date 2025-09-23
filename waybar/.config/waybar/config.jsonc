@@ -33,7 +33,7 @@
       "7": "7",
       "8": "8",
       "9": "9",
-      "urgent": "󱓻"
+      "urgent": ""
     },
     "persistent-workspaces": {
       "*": 3
@@ -72,7 +72,7 @@
       "default": [
         "",
         "",
-        " "
+        ""
       ]
     },
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
@@ -110,7 +110,7 @@
     "interval": 5
   },
   "custom/logo": {
-    "format": " ",
+    "format": "",
     "tooltip": true,
     "tooltip-format": "I use arch btw",
     "on-click": "wofi --show drun",
@@ -136,3 +136,4 @@
     "nospacing": 1
   },
 }
+
