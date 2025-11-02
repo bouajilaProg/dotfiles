@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# variables
+SCRIPTFOLDER="$HOME/dotfiles/scripts/scripts/utils"
+
 # main aliases
 alias cls="clear"
 alias ls="eza --icons -a --git -s type"
@@ -30,22 +33,22 @@ alias vi="nvim"
 alias nano="nvim"
 
 # tmux aliases
-alias tmux="TERM=xterm-kitty; tmux"
-alias tm=" TERM=xterm-kitty; tmux"
+alias tmux="TERM=xterm-kitty tmux"
+alias tm="TERM=xterm-kitty tmux"
 alias ta="tmux attach -t"
-alias tn="tmux new-session -s "
-alias rn="tmux rename "
+alias tn="tmux new-session -s"
+alias rn="tmux rename-session"
 
-# script aliases
-alias reboot="~/bouajilascripts/utils/reboot.sh"
-alias sakr="~/bouajilascripts/utils/sakr.sh"
-alias calc="/home/bouajila/bouajilascripts/utils/calc.sh"
-alias wifi-share="/home/bouajila/bouajilascripts/utils/wifi-share/wifi-share.sh"
+# script aliases (all use $SCRIPTFOLDER)
+alias reboot="$SCRIPTFOLDER/reboot.sh"
+alias sakr="$SCRIPTFOLDER/sakr.sh"
+alias calc="$SCRIPTFOLDER/calc.sh"
+alias wifi-share="$SCRIPTFOLDER/wifi-share/wifi-share.sh"
 
 # fun aliases
 alias aquarium="asciiquarium"
 alias cmatrix="cmatrix -b"
 
-# apps allias
-alias postgres="sudo su - postgres "
-alias vm-manager="/usr/bin/python3 /usr/bin/virt-manager"
+# apps aliases
+alias postgres="sudo -u postgres -i"
+alias vm-manager="python3 /usr/bin/virt-manager"
