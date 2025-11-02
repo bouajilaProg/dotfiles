@@ -8,17 +8,18 @@ alias lld="eza -l --icons --git -a -s date"
 alias cat="bat"
 alias grep="grep --color=auto"
 alias fcd='cd "$(dirname "$(fzf)")"'
-alias cd='z'
+alias cd='z' # careful: overrides builtin cd
 
 # utils aliases
 alias clip="xclip -selection clipboard"
-alias get-ip="echo $(ip -4 addr show | grep inet | grep wlan | cut -d/ -f1) "
+alias get-ip="ip -4 addr show | grep inet | grep wlan | cut -d/ -f1"
 alias untar="tar -xvf"
 alias untargz="tar -xzvf"
 alias tarComp="tar -czvf"
 alias targzComp="tar -czvf"
 alias update-system="sudo pacman -Syu --noconfirm && yay -Syu --noconfirm"
 alias reboot-firm="sudo systemctl reboot --firmware-setup"
+alias conda-init='source ~/miniconda3/etc/profile.d/conda.sh'
 
 # nvim
 alias fnv='nvim "$(fzf)"'
