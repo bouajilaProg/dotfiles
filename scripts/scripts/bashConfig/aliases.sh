@@ -11,7 +11,7 @@ alias lld="eza -l --icons --git -a -s date"
 alias cat="bat"
 alias grep="grep --color=auto"
 alias fcd='cd "$(dirname "$(fzf)")"'
-alias cd='z' # careful: overrides builtin cd
+alias cd='z'
 
 # utils aliases
 alias clip="xclip -selection clipboard"
@@ -52,3 +52,6 @@ alias cmatrix="cmatrix -b"
 # apps aliases
 alias postgres="sudo -u postgres -i"
 alias vm-manager="python3 /usr/bin/virt-manager"
+
+# other
+alias kb-setup="sudo asusctl aura static -c DEF3FF"
