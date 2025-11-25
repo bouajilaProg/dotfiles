@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # Prompt the user for input
-read -p "Enter your response (y/n): " res
-
+res=$(shead -s -o "N" -o "Y" -p "Enter your response (y/n):")
 # Check the value of res
 if [[ "$res" == "y" || "$res" == "Y" ]]; then
   reboot
