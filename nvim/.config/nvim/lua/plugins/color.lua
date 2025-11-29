@@ -38,4 +38,13 @@ return {
 
 	--catppuccin theme
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+
+	-- Example using lazy.nvim:
+	{
+		"HiPhish/rainbow-delimiters.nvim",
+		config = function()
+			-- You can set global options here
+			-- require('rainbow-delimiters.setup').setup({})
+		end,
+	},
 }
