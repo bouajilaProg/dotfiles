@@ -15,3 +15,5 @@ vim.lsp.enable("yamlls")
 
 -- other
 vim.lsp.enable("copilot")
+
+return {}
