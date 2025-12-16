@@ -1,7 +1,4 @@
-vim.g.lazyvim_picker = "telescope"
-
 -- plugin catpuccin
-require("catppuccin").setup()
 vim.cmd.colorscheme("catppuccin")
 
 require("telescope").setup({
@@ -15,3 +12,4 @@ require("telescope").setup({
 		theme = "ivy", -- Apply the Ivy theme globally
 	},
 })
+vim.g.lazyvim_picker = "telescope"
