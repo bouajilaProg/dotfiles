@@ -21,6 +21,11 @@ vim.api.nvim_set_keymap("v", "d", '"_d', { noremap = true })
 vim.keymap.set("n", "xx", "dd", { noremap = true, silent = true })
 vim.keymap.set("n", "x", "<Nop>", { noremap = true, silent = true })
 
+-- pasting without overwriting clipboard
+vim.api.nvim_set_keymap("v", "p", '"_dP', { noremap = true })
+vim.api.nvim_set_keymap("v", "P", '"_dP', { noremap = true })
+
+
 -- trouble
 local trouble_maps = {
 	{ "<leader>xx", "diagnostics toggle", "Diagnostics (Trouble)" },
