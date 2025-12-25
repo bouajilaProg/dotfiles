@@ -16,10 +16,9 @@ vim.api.nvim_set_keymap("n", "<C-Up>", "<C-w>k", { noremap = true, silent = true
 vim.api.nvim_set_keymap("n", "<C-Right>", "<C-w>l", { noremap = true, silent = true })
 
 -- delete
-vim.api.nvim_set_keymap("n", "d", '"_d', { noremap = true })
-vim.api.nvim_set_keymap("v", "d", '"_d', { noremap = true })
-vim.keymap.set("n", "xx", "dd", { noremap = true, silent = true })
-vim.keymap.set("n", "x", "<Nop>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "x", '"_d', { noremap = true, silent = true })
+vim.keymap.set("n", "xx", '"_dd', { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "d", "d", { noremap = true, silent = true })
 
 -- pasting without overwriting clipboard
 vim.api.nvim_set_keymap("v", "p", '"_dP', { noremap = true })
