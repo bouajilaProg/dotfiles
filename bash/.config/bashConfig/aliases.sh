@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# variables
-SCRIPTFOLDER="$HOME/dotfiles/scripts/scripts/utils"
-
 # main aliases
 alias cls="clear"
 alias ls="eza --icons -a --git -s type"
@@ -38,12 +35,6 @@ alias tm="TERM=xterm-kitty tmux"
 alias ta="tmux attach -t"
 alias tn="tmux new-session -s"
 alias rn="tmux rename-session"
-
-# script aliases (all use $SCRIPTFOLDER)
-alias reboot="$SCRIPTFOLDER/reboot.sh"
-alias sakr="$SCRIPTFOLDER/sakr.sh"
-alias calc="$SCRIPTFOLDER/calc.sh"
-alias wifi-share="$SCRIPTFOLDER/wifi-share/wifi-share.sh"
 
 # fun aliases
 alias aquarium="asciiquarium"

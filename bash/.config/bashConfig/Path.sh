@@ -7,7 +7,7 @@ esac
 # pnpm end
 
 # bouajila
-export PATH=/home/bouajila/scripts/bin/:$PATH
+export PATH=/home/bouajila/programs/bin/:$PATH
 export PATH=/home/bouajila/Applications/bin/:$PATH
 export PATH=/home/bouajila/.programs/bin/:$PATH
 # end bouajila
