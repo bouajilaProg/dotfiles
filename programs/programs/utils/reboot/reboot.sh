@@ -4,7 +4,7 @@
 res=$(shead -s -o "N" -o "Y" -p "Enter your response (y/n):")
 # Check the value of res
 if [[ "$res" == "y" || "$res" == "Y" ]]; then
-  reboot
+  /bin/reboot
 elif [[ "$res" == "n" || "$res" == "N" ]]; then
   echo "ok no prob"
 else
