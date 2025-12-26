@@ -15,10 +15,10 @@ require("telescope").setup({
 vim.g.lazyvim_picker = "telescope"
 
 -- web
-vim.lsp.enable("ts_ls")
 vim.lsp.enable("html")
 vim.lsp.enable("tailwindcss")
 vim.lsp.enable("cssls")
+vim.lsp.enable("vtsls")
 
 -- python
 vim.lsp.enable("pylsp")

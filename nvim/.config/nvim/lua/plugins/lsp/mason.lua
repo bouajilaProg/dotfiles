@@ -9,7 +9,7 @@ return {
 				"pyright",
 				"rust_analyzer",
 				"tailwindcss",
-				"tsserver",
+				"vtsls",
 			},
 		},
 
@@ -37,7 +37,6 @@ return {
 						"html-lsp",
 						"tailwindcss-language-server",
 						"css-lsp",
-						"typescript-language-server",
 					},
 				},
 			},
