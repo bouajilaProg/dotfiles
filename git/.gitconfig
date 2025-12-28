@@ -1,0 +1,7 @@
+[user]
+	email = bouajilamedyessine@gmail.com
+	name = bouajilaprog
+[pull]
+	rebase = false
+[core]
+	editor = nvim
