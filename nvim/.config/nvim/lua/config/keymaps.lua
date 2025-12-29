@@ -44,3 +44,7 @@ for _, map in ipairs(trouble_maps) do
 	local key, cmd, desc = unpack(map)
 	vim.keymap.set("n", key, "<cmd>Trouble " .. cmd .. "<cr>", { desc = desc })
 end
+
+-- buffer switch
+vim.api.nvim_set_keymap("n", "<leader>b<Right>", ":bnext<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>b<Left>", ":bprevious<CR>", { noremap = true, silent = true })
