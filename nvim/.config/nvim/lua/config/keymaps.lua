@@ -48,3 +48,7 @@ end
 -- buffer switch
 vim.api.nvim_set_keymap("n", "<leader>b<Right>", ":bnext<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>b<Left>", ":bprevious<CR>", { noremap = true, silent = true })
+
+-- split window
+vim.api.nvim_set_keymap("n", "<leader>w+", ":vsplit<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>w-", ":split<CR>", { noremap = true, silent = true })
