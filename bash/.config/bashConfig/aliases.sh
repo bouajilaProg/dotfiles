@@ -20,6 +20,7 @@ alias targzComp="tar -czvf"
 alias update-system="sudo pacman -Syu --noconfirm && yay -Syu --noconfirm"
 alias reboot-firm="sudo systemctl reboot --firmware-setup"
 alias conda-init='source ~/miniconda3/etc/profile.d/conda.sh'
+alias NM-restart="sudo systemctl restart NetworkManager.service"
 
 # nvim
 alias fnv='nvim "$(fzf)"'
