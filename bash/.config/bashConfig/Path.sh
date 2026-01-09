@@ -11,3 +11,6 @@ export PATH=/home/bouajila/programs/bin/:$PATH
 export PATH=/home/bouajila/Applications/bin/:$PATH
 export PATH=/home/bouajila/.programs/bin/:$PATH
 # end bouajila
+
+# opencode
+export PATH=/home/bouajila/.opencode/bin:$PATH
