@@ -1,5 +1,5 @@
 # Apps exports
-export BROWSER=usr/local/bin/zen-browser
+export BROWSER=/usr/local/bin/zen-browser
 
 # folder path exports
 export XDG_CONFIG_HOME="$HOME/.config"
