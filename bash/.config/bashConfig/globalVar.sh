@@ -1,5 +1,7 @@
 # Apps exports
 export BROWSER=/usr/local/bin/zen-browser
+export EDITOR=/usr/bin/nvim
+export FILEEXPLORER=/usr/bin/nemo
 
 # folder path exports
 export XDG_CONFIG_HOME="$HOME/.config"
