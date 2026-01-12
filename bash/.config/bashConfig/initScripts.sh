@@ -28,3 +28,6 @@ export NVM_DIR="$HOME/.config/nvm"
 
 ### Zoxide
 eval "$(zoxide init bash)"
+
+# fzf key bindings and completion
+[ -f "/usr/share/fzf/key-bindings.bash" ] && source /usr/share/fzf/key-bindings.bash
