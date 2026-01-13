@@ -1,0 +1,51 @@
+# Shell & CLI enhancements
+bash-completion
+bat
+fzf
+starship
+onefetch
+
+# Development & Git
+git
+github-cli
+nodejs
+npm
+nvm
+pnpm
+
+# System monitoring & utilities
+brightnessctl
+btop
+htop
+fastfetch
+lazydocker
+lazygit
+xclip
+wl-clipboard
+
+# Docker
+docker
+
+# Desktop environment & Wayland
+hyprland
+hypridle
+hyprlock
+hyprpaper
+hyprpicker
+hyprshot
+wofi
+
+# GUI apps
+blender
+firefox
+gammastep
+geeqie
+kitty
+nemo
+obs-studio
+obsidian
+okular
+
+# Multimedia / misc
+figlet
+
