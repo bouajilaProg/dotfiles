@@ -31,3 +31,8 @@ eval "$(zoxide init bash)"
 
 # fzf key bindings and completion
 [ -f "/usr/share/fzf/key-bindings.bash" ] && source /usr/share/fzf/key-bindings.bash
+
+# Fastfetch
+clear
+echo
+fastfetch
