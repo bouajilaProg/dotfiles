@@ -1,145 +1,161 @@
 @import "mocha.css";
 
+/* ===========================================
+   Global Reset
+   =========================================== */
 * {
-  font-family: "CodeNewRoman Nerd Font";
-  font-size: 17px;
-  min-height: 0;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 16px;
+  border: none;
+  border-radius: 0;
+  margin: 0;
 }
 
+/* ===========================================
+   Main Waybar Container
+   =========================================== */
 #waybar {
-  background: transparent;
+  background-color: @crust;
   color: @text;
-  margin: 5px 5px;
+  border-top: 1px solid @surface0;
 }
 
-#workspaces {
-  background-color: transparent;
+/* ===========================================
+   Module Containers
+   Common padding and height for all modules
+   =========================================== */
+#custom-logo,
+#workspaces button,
+#custom-music,
+#tray,
+#bluetooth,
+#network,
+#pulseaudio,
+#battery,
+#clock,
+#custom-lock,
+#custom-power {
+  padding: 0 15px;
+  min-height: 40px;
 }
 
+/* ===========================================
+   Label Reset
+   Ensures text stays centered in modules
+   =========================================== */
+label {
+  padding: 0;
+  margin: 0;
+}
+
+/* ===========================================
+   Logo Module
+   Launcher icon for opening applications
+   =========================================== */
+#custom-logo {
+  color: @sky;
+  font-size: 20px;
+}
+
+#custom-logo:hover {
+  background-color: @surface1;
+}
+
+/* ===========================================
+   Workspaces Module
+   Hyprland workspace indicators
+   =========================================== */
 #workspaces button {
-  all: initial;
-  /* Remove GTK theme values (waybar #1351) */
-  min-width: 0;
-  /* Fix weird spacing in materia (waybar #450) */
+  color: @subtext1;
   box-shadow: inset 0 -3px transparent;
-  /* Use box-shadow instead of border so the text isn't offset */
-  padding: 6px 18px;
-  margin: 6px 3px;
-  border-radius: 4px;
-  background-color: #1e1e2e;
-  color: #cdd6f4;
 }
 
 #workspaces button.active {
-  color: #1e1e2e;
-  background-color: #cdd6f4;
+  color: @mauve;
+  background-color: @base;
+  box-shadow: inset 0 -3px @mauve;
 }
 
 #workspaces button:hover {
-  box-shadow: inherit;
-  text-shadow: inherit;
-  color: #1e1e2e;
-  background-color: #cdd6f4;
-}
-
-#workspaces button.urgent {
-  background-color: #f38ba8;
-}
-
-
-
-
-#custom-settings-menu,
-#bluetooth,
-#network,
-#custom-logo,
-#custom-music,
-#tray,
-#backlight,
-#clock,
-#battery,
-#pulseaudio,
-#custom-lock,
-#custom-power {
   background-color: @surface0;
-  padding: 0.5rem 1rem;
-  margin: 5px 0;
+  box-shadow: inset 0 -3px @sky;
 }
 
-#custom-logo {
-  border-radius: 0.5rem;
-  margin-left: 0.5rem;
-  color: @sky;
-  margin-right: 0.25rem;
-}
-
-#clock {
-  color: @maroon;
-  border-radius: 0px 1rem 1rem 0px;
-  margin-right: 1rem;
-}
-
+/* ===========================================
+   Battery Module
+   Color changes based on state and charge level
+   =========================================== */
 #battery {
   color: @green;
 }
 
 #battery.charging {
-  color: @green;
-}
-
-#battery.warning:not(.charging) {
-  color: @red;
-}
-
-#backlight {
   color: @yellow;
 }
 
-#backlight,
-#battery {
-  border-radius: 0;
-}
-
-#pulseaudio {
+#battery.warning:not(.charging) {
   color: @maroon;
-  border-radius: 1rem 0px 0px 1rem;
-  margin-left: 1rem;
 }
 
-#custom-music {
-  color: @mauve;
-  border-radius: 1rem;
-}
-
-#custom-settings-menu,
-#custom-lock {
-  border-radius: 1rem 0px 0px 1rem;
-  color: @lavender;
-}
-
-#network,
-#custom-power {
-  margin-right: 1rem;
-  padding: 0.5rem;
-  border-radius: 0px 1rem 1rem 0px;
+#battery.critical:not(.charging) {
   color: @red;
 }
 
+/* ===========================================
+   Audio Module
+   PulseAudio volume indicator
+   =========================================== */
+#pulseaudio {
+  color: @lavender;
+}
+
+/* ===========================================
+   Network Module
+   WiFi/Ethernet status indicator
+   =========================================== */
 #network {
-  padding-right: 1.5rem;
-  margin-right: 0rem;
+  color: @mauve;
 }
 
-#tray {
-  margin-right: 1rem;
-  border-radius: 1rem;
-}
-
+/* ===========================================
+   Bluetooth Module
+   Bluetooth adapter status
+   =========================================== */
 #bluetooth {
   color: @blue;
 }
 
-#workspaces+#custom-settings-menu {
-  margin-top: 0;
+/* ===========================================
+   Clock Module
+   Shows current time/date
+   =========================================== */
+#clock {
+  font-weight: bold;
+}
+
+/* ===========================================
+   Power Menu Module
+   System shutdown button
+   =========================================== */
+#custom-power {
+  color: @red;
+}
+
+#custom-power:hover {
+  background-color: @red;
+  color: @crust;
+}
+
+/* ===========================================
+   Unified Hover Effects
+   Background color when hovering over modules
+   =========================================== */
+#tray:hover,
+#bluetooth:hover,
+#network:hover,
+#pulseaudio:hover,
+#battery:hover,
+#clock:hover,
+#custom-lock:hover {
   background-color: @surface0;
 }

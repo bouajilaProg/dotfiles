@@ -1,16 +1,27 @@
 {
+  // ===========================================
+  // Waybar Configuration
+  // ===========================================
+
+  // Bar positioning and appearance
   "layer": "top",
   "position": "bottom",
+  "height": 40,
+
+  // Left modules: Logo launcher and workspace indicators
   "modules-left": [
     "custom/logo",
     "hyprland/workspaces"
   ],
+
+  // Center module: Music player info
   "modules-center": [
     "custom/music"
   ],
+
+  // Right modules: System tray, status indicators, clock, and power
   "modules-right": [
     "tray",
-    "custom/settings-menu",
     "bluetooth",
     "network",
     "pulseaudio",
@@ -19,9 +30,14 @@
     "custom/lock",
     "custom/power"
   ],
+
+  // ===========================================
+  // Workspace Module (Hyprland)
+  // ===========================================
   "hyprland/workspaces": {
     "on-click": "activate",
     "format": "{icon}",
+    // Icon mapping for each workspace number and urgent state
     "format-icons": {
       "default": "",
       "1": "1",
@@ -35,105 +51,124 @@
       "9": "9",
       "urgent": ""
     },
+    // Persistent workspaces: 3 slots per workspace name
     "persistent-workspaces": {
       "*": 3
     }
   },
+
+  // ===========================================
+  // System Tray Module
+  // ===========================================
   "tray": {
-    "icon-size": 21,
+    "icon-size": 18,
     "spacing": 10
   },
+
+  // ===========================================
+  // Bluetooth Module
+  // ===========================================
   "bluetooth": {
     "format": "󰂯",
     "max-length": 15
   },
+
+  // ===========================================
+  // Music Player Module
+  // ===========================================
   "custom/music": {
     "format": "  {}",
     "escape": true,
     "interval": 5,
     "tooltip": false,
+    // Exec command to get current track title from playerctl
     "exec": "playerctl metadata --format='{{ title }}'",
+    // Click to play/pause
     "on-click": "playerctl play-pause",
     "max-length": 50
   },
-  "custom/settings-menu": {
-    "format": ""
-  },
+
+  // ===========================================
+  // Clock Module
+  // ===========================================
   "clock": {
     "timezone": "Afrika/tunis",
-    "format": "<span foreground='#f5c2e7'>   </span>{:%a %d %H:%M}",
+    "format": "{:%a %d %H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
+
+  // ===========================================
+  // PulseAudio Module (Volume)
+  // ===========================================
   "pulseaudio": {
-    // "scroll-step": 1, // %, can be a float
-    "format": "{icon}  {volume}%",
-    "format-muted": "    0%",
+    "format": "{icon} {volume}%",
+    "format-muted": "  0%",
+    // Volume level icons: low, medium, high
     "format-icons": {
-      "default": [
-        "",
-        "",
-        ""
-      ]
+      "default": ["", "", ""]
     },
+    // Click to toggle mute
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
   },
+
+  // ===========================================
+  // Lock Screen Module
+  // ===========================================
   "custom/lock": {
     "tooltip": false,
+    // Small delay before launching hyprlock
     "on-click": "sh -c '(sleep 0.5s; hyprlock )'",
-    "format": "",
+    "format": ""
   },
+
+  // ===========================================
+  // Power Menu Module (Shutdown)
+  // ===========================================
   "custom/power": {
     "tooltip": false,
-    "on-click": " shutdown now",
-    "format": "󰐥 "
+    "on-click": "shutdown now",
+    "format": "󰐥"
   },
+
+  // ===========================================
+  // Battery Module
+  // ===========================================
   "battery": {
+    // Battery percentage thresholds for state changes
     "states": {
       "warning": 25,
       "critical": 15
     },
-    "format": "<span size='13000' foreground='#a6e3a1'>{icon} </span> {capacity}%",
-    "format-warning": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {capacity}%",
-    "format-critical": "<span size='13000' foreground='#E38C8F'>{icon} </span> {capacity}%",
-    "format-charging": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
-    "format-plugged": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
-    "format-alt": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {time}",
-    "format-full": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "tooltip-format": "{time}",
-    "interval": 5
+    "interval": 5,
+    // Format strings for different battery states
+    "format": "{icon} {capacity}%",
+    "format-charging": "󱐋 {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-full": " {capacity}%",
+    // Battery icons from empty to full
+    "format-icons": ["", "", "", "", ""]
   },
+
+  // ===========================================
+  // Logo/Launcher Module
+  // ===========================================
   "custom/logo": {
     "format": "",
-    "tooltip": true,
-    "tooltip-format": "I use arch btw",
-    "on-click": "wofi --show drun",
+    "tooltip": false,
+    // Click to open application launcher (wofi)
+    "on-click": "wofi --show drun"
   },
+
+  // ===========================================
+  // Network Module
+  // ===========================================
   "network": {
     "format-wifi": "{icon}",
-    "format-icons": [
-      "󰤯",
-      "󰤟",
-      "󰤢",
-      "󰤥",
-      "󰤨"
-    ],
+    // WiFi signal strength icons
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
     "format-ethernet": "󰀂",
-    "format-alt": "󱛇",
     "format-disconnected": "󰖪",
-    "tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-    "tooltip-format-ethernet": "󰀂  {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-    "tooltip-format-disconnected": "Disconnected",
-    "on-click": "~/dotfiles/waybar/.config/waybar/scripts/wifi/wifi.sh",
-    "on-click-right": "~/dotfiles/waybar/.config/waybar/scripts/wifi/new-wifi.sh",
-    "interval": 5,
-    "nospacing": 1
-  },
+    // Click to run WiFi management script
+    "on-click": "~/dotfiles/waybar/.config/waybar/scripts/wifi/wifi.sh"
+  }
 }
-
